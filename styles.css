@@ -1,5 +1,7 @@
 * {
-    font-family: 'Nanum Brush Script';
+    font-family: "Nanum Brush Script", cursive;
+    font-weight: 400;
+    font-style: normal;   
 }
   
 /* 전체 배경과 텍스트 스타일 지정 */
@@ -8,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('./images/background.jpeg');
+    background-image: url('./images/background.jpg');
     background-size: cover;
 } 
 
@@ -18,7 +20,7 @@ body {
     width: 80vw; /* 모바일에서도 적당한 크기로 조정 */
     max-width: 370px; /* 최대 너비를 설정 */
     height: 450px;
-    background-image: url('./images/letter.jpeg');
+    background-image: url('./images/letter.jpg');
     background-size: cover;
     border-radius: 30px;
     z-index: 100;
@@ -34,6 +36,34 @@ body {
     opacity: 1;
     transition: opacity 0.5s linear;
 }
+
+/* text 스타일 */
+p {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.p-title {
+    font-size: 80px;
+}
+
+.p-sub {
+    font-size: 35px;
+}
+
+.p-message {
+    width: 65%;
+    font-size: 25px;
+    word-wrap: break-word;
+    margin: 0 auto;
+}
+
+.p-name {
+    text-align: end;
+    padding-right:80px;
+}
+
 
 /* 버튼 스타일 */
 .btn-container {
@@ -65,34 +95,6 @@ button {
 #audio-bgm {
     display: none;
 }
-
-/* text 스타일 */
-p {
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.p-title {
-    font-size: 80px;
-}
-
-.p-sub {
-    font-size: 35px;
-}
-
-.p-message {
-    width: 65%;
-    font-size: 25px;
-    word-wrap: break-word;
-    margin: 0 auto;
-}
-
-.p-name {
-    text-align: end;
-    padding-right:80px;
-}
-
 
 /* 반응형 디자인 - 태블릿 및 작은 화면 (최대 768px) */
 @media screen and (max-width: 768px) {
