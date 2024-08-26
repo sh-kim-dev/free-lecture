@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('https://i.pinimg.com/564x/68/1f/a8/681fa8277ff4aeed25d8e76b7a93fd56.jpg');
+    background-image: url('./images/background.jpeg');
     background-size: cover;
 } 
 
@@ -18,7 +18,7 @@ body {
     width: 80vw; /* 모바일에서도 적당한 크기로 조정 */
     max-width: 370px; /* 최대 너비를 설정 */
     height: 450px;
-    background-image: url('https://i.pinimg.com/564x/cb/2d/84/cb2d841ec6bc2f42c291c9d734fe1717.jpg');
+    background-image: url('./images/letter.jpeg');
     background-size: cover;
     border-radius: 30px;
     z-index: 100;
@@ -36,26 +36,37 @@ body {
 }
 
 /* 버튼 스타일 */
-.btn-toggle {
+.btn-container {
+    width: 100%;
     position: absolute;
     left: 50%;
-    top: 55px;
     transform: translateX(-50%);
-    padding: 10px;
-    border: none;
-    background-color: #e60d0dc1;
-    color: white;
+    bottom: -10%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+button {
+    width: 70px;
     font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 200;
+    background-color: rgb(223, 56, 56);
+    color: white;
 }
 
-/* 버튼에 마우스를 올렸을 때 색상 변경 */
-.btn-toggle:hover {
-    background-color: #e60d0d; 
+/* audio 스타일 */
+#audio-bgm {
+    display: none;
 }
 
+/* text 스타일 */
 p {
     color: white;
     padding-left: 10px;
@@ -82,3 +93,93 @@ p {
     padding-right:80px;
 }
 
+
+/* 반응형 디자인 - 태블릿 및 작은 화면 (최대 768px) */
+@media screen and (max-width: 768px) {
+    .letter {
+        width: 90vw;
+        height: 400px;
+    }
+
+    .p-title {
+        font-size: 60px;
+    }
+
+    .p-sub {
+        font-size: 30px;
+    }
+
+    .p-message {
+        font-size: 20px;
+    }
+
+    .p-name {
+        padding-right: 50px;
+    }
+
+    .btn-toggle {
+        font-size: 14px;
+        padding: 8px;
+        top: 45px;
+    }
+}
+
+/* 반응형 디자인 - 모바일 (최대 480px) */
+@media screen and (max-width: 480px) {
+    .letter {
+        width: 95vw;
+        height: 350px;
+    }
+
+    .p-title {
+        font-size: 50px;
+    }
+
+    .p-sub {
+        font-size: 25px;
+    }
+
+    .p-message {
+        font-size: 18px;
+    }
+
+    .p-name {
+        padding-right: 30px;
+    }
+
+    .btn-toggle {
+        font-size: 12px;
+        padding: 6px;
+        top: 35px;
+    }
+}
+
+/* 반응형 디자인 - 큰 화면 (최소 1024px) */
+@media screen and (min-width: 1024px) {
+    .letter {
+        width: 60vw;
+        height: 500px;
+    }
+
+    .p-title {
+        font-size: 80px;
+    }
+
+    .p-sub {
+        font-size: 45px;
+    }
+
+    .p-message {
+        font-size: 25px;
+    }
+
+    .p-name {
+        padding-right: 100px;
+    }
+
+    .btn-toggle {
+        font-size: 18px;
+        padding: 12px;
+        top: 65px;
+    }
+}

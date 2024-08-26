@@ -10,14 +10,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 편지지가 들어갈 div -->
-    <div class="letter">
+    <div class="letter"">
         <p class="p-title">2024<span class="p-sub">한가위</span></p>
         <p class="p-message"></p>
-        <p class="p-name">-김소현 드림-</p>
+        <p class="p-name hidden">-김소현 드림-</p>
+        <div class="btn-container">
+            <button id="btn-bgm" onclick="controlBgm()">재생</button>
+            <button onclick="showNewMessage()">편지 보기</button>
+            <button id="btn-share" onclick="shareMessage()">공유</button>
+        </div>
     </div>
-    <!-- 버튼을 추가 -->
-    <button class="btn-toggle" onclick="showNewMessage()">편지 보기</button>
+    <audio controls loop id="audio-bgm">
+        <source src="./audio/bgm.mp3" type="audio/mp3">
+    </audio>
     <script src="script.js"></script>
+    <script src="audio.js"></script>
+    <script src="share.js"></script>
 </body>
 </html>
