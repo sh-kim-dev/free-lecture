@@ -36,6 +36,24 @@ function getRandomMessage() {
     return messages[randomIndex];
 }
 
+function typeMessage() {
+    const messageElement = document.querySelector('.p-message');
+    const randomMessage = getRandomMessage();
+    messageElement.innerHTML = '';
+
+    let i = 0;
+
+    function typeNextCharacter() {
+        if (i < randomMessage.length) {
+            const txt = randomMessage[i];
+            messageElement.innerHTML += txt;
+            i++;
+            setTimeout(typeNextCharacter, 100); // 100ms 간격으로 다음 글자를 추가
+        }
+    }
+    typeNextCharacter();
+}
+
 function showNewMessage() {
     const letter = document.querySelector('.letter');
     const message = document.querySelector('.p-message');
@@ -46,7 +64,8 @@ function showNewMessage() {
 
     // 사라진 후 새로운 메시지를 표시
     setTimeout(() => {
-        message.textContent = getRandomMessage();
+        typeMessage();
+
         letter.classList.remove('hidden');
         letter.classList.add('opened');
     }, 500); // 500ms는 CSS transition 시간과 일치
