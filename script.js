@@ -31,30 +31,39 @@ const messages = [
     "따뜻하고 행복한 한가위 보내시고, 항상 건강하시길 바랍니다💪"
 ];
 
-/**
- * 랜덤 인사말 가져오는 함수
-*/
+// 30개의 인사말 중 한 개를 랜덤으로 뽑는 함수에요.
 function getRandomMessage() {
     const randomIndex = Math.floor(Math.random() * messages.length);
     return messages[randomIndex];
 }
 
-/**
- * 주어진 HTML 요소에서 타이핑 효과를 시뮬레이션하는 함수
- * 
- * 이 함수는 '.p-message' 클래스를 가진 요소를 대상으로 하며, 요소의 innerHTML에 
- * 한 번에 한 글자씩 추가하여 타이핑 효과를 시뮬레이션합니다. 타이핑 속도는 
- * setTimeout 함수를 사용해 100밀리초의 지연을 두고 조절됩니다.
- * 모든 텍스트가 타이핑되면, 콜백 함수가 실행됩니다.
- */
-function typeMessage(text, callback) {
+// 인사말을 화면에 표시해주는 함수에요.
+function showMessage(callback) {
+    const randomMessage = getRandomMessage(); // 위에서 작성한 getRandomMessage를 사용해주고 있어요!
+    const messageElement = document.querySelector('.p-message');
+    messageElement.innerHTML = randomMessage; // 'p-message'라는 클래스를 가진 요소에 randomMessage를 입력해준답니다!
+
+    if(callback) {
+      callback();
+    }
+}
+
+// 요소의 클래스를 추가하거나 숨겨주는 함수에요. 
+function toggleVisibility(element, show) {
+  element.classList.toggle('hidden', !show);
+  element.classList.toggle('opened', show);
+}
+
+// 텍스트 타이핑 애니메이션을 동작하는 함수에요.
+function typeMessage(callback) {
+    const randomMessage = getRandomMessage();
     const messageElement = document.querySelector('.p-message');
     messageElement.innerHTML = '';
-    let i = 0;
 
+    let i = 0;
     function typeNextCharacter() {
-        if (i < text.length) {
-            messageElement.innerHTML += text[i];
+        if (i < randomMessage.length) {
+            messageElement.innerHTML += randomMessage[i];
             i++;
             setTimeout(typeNextCharacter, 100);
         } else if (callback) {
@@ -65,50 +74,24 @@ function typeMessage(text, callback) {
     typeNextCharacter();
 }
 
-/**
- * 주어진 요소의 가시성을 토글하는 함수
- * 
- * 이 함수는 'hidden' 클래스와 'opened' 클래스를 토글하여 요소의 가시성을 제어합니다.
- * 
- * 'show'가 true이면 'opened' 클래스를 추가하고 'hidden' 클래스를 제거하여 요소를 표시하고,
- * 'show'가 false이면 'hidden' 클래스를 추가하고 'opened' 클래스를 제거하여 요소를 숨깁니다.
- */
-function toggleVisibility(element, show) {
-    element.classList.toggle('hidden', !show);
-    element.classList.toggle('opened', show);
-}
- 
-/**
- * 새로운 메시지를 표시하는 함수
- * 
- * 이 함수는 먼저 '.letter'와 '.p-name' 클래스를 가진 요소를 찾아 현재 표시된 메시지와 이름을 숨깁니다.
- * 이후, 짧은 지연(500ms) 후에 새로운 메시지를 타이핑하고, 타이핑이 완료되면 이름을 다시 표시합니다.
- * 
- * 1. 현재 메시지와 이름을 숨깁니다.
- * 2. 500ms 지연 후에 새로운 메시지를 타이핑하고, 타이핑이 완료되면 이름을 표시합니다.
- */
-function showNewMessage() {
+// 앞에서 정의한 모든 함수를 활용한 함수에요.
+// 우선 편지지와 작성자 요소를 숨겼다가 새로운 인사말과 작성자를 보여주고 있어요. 
+function renewMessage() {
     const letterElement = document.querySelector('.letter');
     const nameElement = document.querySelector('.p-name');
 
-    // 현재 메시지를 숨김
     toggleVisibility(letterElement, false);
     toggleVisibility(nameElement, false);
 
-    // 새로운 메시지를 타이핑 후 이름을 표시
     setTimeout(() => {
-        typeMessage(getRandomMessage(), () => {
+        typeMessage(() => {
             toggleVisibility(nameElement, true);
         });
         toggleVisibility(letterElement, true);
     }, 500);
 }
 
-/**
- * 초기 상태 설정
- * 
- * 페이지 로드 시 첫 번째 메시지 표시합니다.
- */
+// 페이지 로드 시 renewMessage 함수가 실행됩니다.
 window.onload = () => {
-    showNewMessage(); 
+    renewMessage(); 
 };

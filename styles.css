@@ -91,11 +91,6 @@ button {
     color: white;
 }
 
-/* audio 스타일 */
-#audio-bgm {
-    display: none;
-}
-
 /* 반응형 디자인 - 태블릿 및 작은 화면 (최대 768px) */
 @media screen and (max-width: 768px) {
     .letter {

@@ -8,23 +8,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="audio.js"></script>
+    <script src="share.js"></script>
 </head>
 <body>
     <div class="letter">
         <p class="p-title">2024<span class="p-sub">한가위</span></p>
-        <p class="p-message"></p>
+        <p class="p-message">메시지가 들어갈 부분입니다</p>
         <p class="p-name hidden">-르탄 드림-</p>
         <div class="btn-container">
             <button id="btn-bgm" onclick="controlBgm()">재생</button>
-            <button onclick="showNewMessage()">편지 보기</button>
+            <button onclick="renewMessage()">편지 보기</button>
             <button id="btn-share" onclick="shareMessage()">공유</button>
         </div>
     </div>
-    <audio controls loop id="audio-bgm">
+    <audio loop id="audio-bgm">
         <source src="./audio/bgm.mp3" type="audio/mp3">
     </audio>
-    <script src="script.js"></script>
-    <script src="audio.js"></script>
-    <script src="share.js"></script>
 </body>
 </html>
