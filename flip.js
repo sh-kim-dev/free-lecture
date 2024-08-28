@@ -1,23 +1,28 @@
+let isFlipped = false;
 
 function flipImage() {
-    const letterElement = document.getElementById('msg-container');
-    letterElement.style.transform =  "scaleX(-1)";
+    const letter = document.getElementById('letter');
+    
+    // 회전 상태에 따라 클래스 추가/제거
+    if (isFlipped) {
+        letter.classList.remove('rotate-360');
+        letter.classList.add('rotate-0');
+    } else {
+        letter.classList.add('rotate-360');
+        letter.classList.remove('rotate-0');
+    }
 
+    // 상태 반전
+    isFlipped = !isFlipped;
+
+    // 애니메이션 종료 후 최종 상태 설정
+    letter.addEventListener('transitionend', () => {
+        if (isFlipped) {
+            letter.classList.remove('rotate-360');
+            letter.classList.add('rotate-180');
+        } else {
+            letter.classList.remove('rotate-360', 'rotate-180');
+            letter.classList.add('rotate-0');
+        }
+    }, { once: true }); // 한 번만 실행되도록 설정
 }
-
-// function flipImage(){
-//     const letterElement = document.getElementById('msg-container');
-//     if (document.getElementById("directionSelect").selectedIndex == 0) {
-//       if (img.style.transform.indexOf("scaleX") != -1) {
-//         img.style.transform = img.style.transform.replace("scaleX(-1)","");
-//       }else{
-//         img.style.transform = img.style.transform+" scaleX(-1)";
-//       }
-//     }else{
-//       if (img.style.transform.indexOf("scaleY") != -1) {
-//         img.style.transform = img.style.transform.replace("scaleY(-1)","");
-//       }else{
-//         img.style.transform = img.style.transform+" scaleY(-1)";
-//       }
-//     }
-//   }

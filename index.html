@@ -6,8 +6,9 @@
     <title>추석 편지</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="flip.css">
     <script src="script.js"></script>
     <script src="audio.js"></script>
     <script src="share.js"></script>
@@ -15,19 +16,26 @@
 </head>
 <body>
     <div id="letter" onclick="flipImage()">
-        <div id="msg-container">
-            <p class="p-title">2024<span class="p-sub">한가위</span></p>
-            <p class="p-message">메시지가 들어갈 부분입니다</p>
-            <p class="p-name hidden">-르탄 드림-</p>
+        <!-- 앞면 -->
+        <div class="face front">
+            <div id="msg-container">
+                <p class="p-title">2024<span class="p-sub">한가위</span></p>
+                <p class="p-message">메시지가 들어갈 부분입니다</p>
+                <p class="p-name hidden">-르탄 드림-</p>
+            </div>
         </div>
-        <div id="btn-container">
-            <button class="btn-bgm" onclick="controlBgm()">재생</button>
-            <button onclick="renewMessage()">편지 보기</button>
-            <button class="btn-share" onclick="shareMessage()">공유</button>
-        </div>
+        <!-- 뒷면 -->
+        <div class="face back">새로운 내용이 여기에 표시됩니다</div>
+    </div>
+    <div id="btn-container">
+        <button class="btn-bgm" onclick="controlBgm()">재생</button>
+        <button onclick="renewMessage()">편지 보기</button>
+        <button class="btn-share" onclick="shareMessage()">공유</button>
     </div>
     <audio loop id="audio-bgm">
         <source src="./audio/bgm.mp3" type="audio/mp3">
     </audio>
 </body>
+
+
 </html>

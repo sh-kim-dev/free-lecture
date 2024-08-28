@@ -1,7 +1,5 @@
 * {
-    font-family: "Nanum Brush Script", cursive;
-    font-weight: 400;
-    font-style: normal;   
+    font-family: "Jua", sans-serif;
 }
   
 /* 전체 배경과 텍스트 스타일 지정 */
@@ -17,9 +15,8 @@ body {
 /* 편지지 스타일 */
 #letter {
     position: relative;
-    width: 80vw; /* 모바일에서도 적당한 크기로 조정 */
-    max-width: 370px; /* 최대 너비를 설정 */
-    height: 450px;
+    width: 450px; /* 모바일에서도 적당한 크기로 조정 */
+    height: 400px;
     background-image: url('./images/letter.jpg');
     background-size: cover;
     border-radius: 30px;
@@ -45,16 +42,21 @@ p {
 }
 
 .p-title {
-    font-size: 80px;
+    font-size: 75px;
+    font-weight: 400;
+    color: rgb(255, 108, 50);
+    text-shadow: 3px 4px 5px red;
 }
 
 .p-sub {
-    font-size: 35px;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+
 }
 
 .p-message {
     width: 65%;
-    font-size: 25px;
+    font-size: 23px;
     word-wrap: break-word;
     margin: 0 auto;
 }
@@ -72,7 +74,7 @@ p {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: -10%;
+    bottom: 20%;
 }
 
 button {
@@ -92,7 +94,7 @@ button {
 /* 반응형 디자인 - 태블릿 및 작은 화면 (최대 768px) */
 @media screen and (max-width: 768px) {
     #letter {
-        width: 90vw;
+        width: 350px;
         height: 400px;
     }
 
@@ -105,7 +107,7 @@ button {
     }
 
     .p-message {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .p-name {
@@ -116,8 +118,8 @@ button {
 /* 반응형 디자인 - 모바일 (최대 480px) */
 @media screen and (max-width: 480px) {
     #letter {
-        width: 95vw;
-        height: 350px;
+        width: 300px;
+        height: 250px;
     }
 
     .p-title {
@@ -129,7 +131,7 @@ button {
     }
 
     .p-message {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .p-name {
@@ -138,10 +140,10 @@ button {
 }
 
 /* 반응형 디자인 - 큰 화면 (최소 1024px) */
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
     #letter {
-        width: 60vw;
-        height: 500px;
+        width: 450px;
+        height: 400px;
     }
 
     .p-title {
@@ -153,10 +155,10 @@ button {
     }
 
     .p-message {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .p-name {
         padding-right: 100px;
     }
-}
+} */
