@@ -2,7 +2,7 @@
 let isPlaying = false;
 
 function controlBgm() {
-    const bgmElement = document.getElementById('btn-bgm');
+    const bgmElement = document.querySelector('.btn-bgm');
     const bgm = document.getElementById('audio-bgm');
     
     if (isPlaying) {

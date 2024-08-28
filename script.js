@@ -77,7 +77,7 @@ function typeMessage(callback) {
 // 앞에서 정의한 모든 함수를 활용한 함수에요.
 // 우선 편지지와 작성자 요소를 숨겼다가 새로운 인사말과 작성자를 보여주고 있어요. 
 function renewMessage() {
-    const letterElement = document.querySelector('.letter');
+    const letterElement = document.getElementById('letter');
     const nameElement = document.querySelector('.p-name');
 
     toggleVisibility(letterElement, false);

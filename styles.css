@@ -15,7 +15,7 @@ body {
 } 
 
 /* 편지지 스타일 */
-.letter {
+#letter {
     position: relative;
     width: 80vw; /* 모바일에서도 적당한 크기로 조정 */
     max-width: 370px; /* 최대 너비를 설정 */
@@ -30,7 +30,7 @@ body {
 .hidden {
     opacity: 0;
     transition: opacity 0.5s linear;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 
 .opened {
     opacity: 1;
@@ -66,15 +66,13 @@ p {
 
 
 /* 버튼 스타일 */
-.btn-container {
+#btn-container {
     width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10%;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    position: absolute;
+    bottom: -10%;
 }
 
 button {
@@ -93,7 +91,7 @@ button {
 
 /* 반응형 디자인 - 태블릿 및 작은 화면 (최대 768px) */
 @media screen and (max-width: 768px) {
-    .letter {
+    #letter {
         width: 90vw;
         height: 400px;
     }
@@ -113,17 +111,11 @@ button {
     .p-name {
         padding-right: 50px;
     }
-
-    .btn-toggle {
-        font-size: 14px;
-        padding: 8px;
-        top: 45px;
-    }
 }
 
 /* 반응형 디자인 - 모바일 (최대 480px) */
 @media screen and (max-width: 480px) {
-    .letter {
+    #letter {
         width: 95vw;
         height: 350px;
     }
@@ -143,17 +135,11 @@ button {
     .p-name {
         padding-right: 30px;
     }
-
-    .btn-toggle {
-        font-size: 12px;
-        padding: 6px;
-        top: 35px;
-    }
 }
 
 /* 반응형 디자인 - 큰 화면 (최소 1024px) */
 @media screen and (min-width: 1024px) {
-    .letter {
+    #letter {
         width: 60vw;
         height: 500px;
     }
@@ -172,11 +158,5 @@ button {
 
     .p-name {
         padding-right: 100px;
-    }
-
-    .btn-toggle {
-        font-size: 18px;
-        padding: 12px;
-        top: 65px;
     }
 }
