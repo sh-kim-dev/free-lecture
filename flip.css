@@ -1,6 +1,6 @@
 #letter {
     transform-style: preserve-3d; /* 3D 효과를 위한 설정 */
-    transition: transform 0.4s;
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
@@ -14,9 +14,6 @@
 }
 
 .back {
-    background-color: #B9A5A7; /* 뒷면의 배경색 */
-    border-radius: 10px;
-    border: 5px solid rgb(255, 255, 255);
     transform: rotateY(180deg); /* 초기에는 뒷면을 숨김 처리 */
 }
 
@@ -38,16 +35,14 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
-    background-image: url('./images/photo');
 }
 
 .photo {
-
-    margin-top: 30px;
     border-radius: 15px;
+    width: 100%;
+    height: 100%;
 }
 
 .photo-date {

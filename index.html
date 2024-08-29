@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="flip.css">
-    <script src="script.js"></script>
-    <script src="audio.js"></script>
+    <link rel="stylesheet" href="media.css">
+    <script src="index.js"></script>
+    <script src="music.js"></script>
     <script src="share.js"></script>
     <script src="flip.js"></script>
 </head>
@@ -28,7 +29,6 @@
         <div class="face back">
             <div class="photo-container">
                 <img src="./images/photo.jpg" class="photo"/>
-                <p class="photo-date"></p>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <button class="btn-share" onclick="shareMessage()">공유</button>
     </div>
     <audio loop id="audio-bgm">
-        <source src="./audio/bgm.mp3" type="audio/mp3">
+        <source src="./audio/music.mp3" type="audio/mp3">
     </audio>
 </body>
 
