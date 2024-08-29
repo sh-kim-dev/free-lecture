@@ -14,14 +14,12 @@ body {
     background-position: center; 
 }
 
-/* 편지지 스타일 */
+/* 엽서 스타일 */
 #letter {
     position: relative;
     width: 450px; 
     height: 450px;
     border-radius: 30px;
-    display: flex;
-    flex-direction: column;
 }
 
 .letter-background {
@@ -43,7 +41,7 @@ body {
     transition: opacity 0.5s linear;
 }
 
-/* text 스타일 */
+/* 텍스트 스타일 */
 #msg-container {
     width: 100%;
     position: absolute;
@@ -67,7 +65,6 @@ p {
     text-align: end;
     padding-right:80px;
 }
-
 
 /* 버튼 스타일 */
 #btn-container {
