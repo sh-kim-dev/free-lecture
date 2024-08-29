@@ -15,17 +15,22 @@
     <script src="flip.js"></script>
 </head>
 <body>
-    <div id="letter" onclick="flipImage()">
+    <div id="letter" class="rotate-0" onclick="flipImage()">
+        <img src="./images/rabbit.png" class="letter-background"/>
         <!-- 앞면 -->
         <div class="face front">
             <div id="msg-container">
-                <p class="p-title">2024<span class="p-sub">한가위</span></p>
                 <p class="p-message">메시지가 들어갈 부분입니다</p>
                 <p class="p-name hidden">-르탄 드림-</p>
             </div>
         </div>
         <!-- 뒷면 -->
-        <div class="face back">새로운 내용이 여기에 표시됩니다</div>
+        <div class="face back">
+            <div class="photo-container">
+                <img src="./images/photo.jpg" class="photo"/>
+                <p class="photo-date"></p>
+            </div>
+        </div>
     </div>
     <div id="btn-container">
         <button class="btn-bgm" onclick="controlBgm()">재생</button>

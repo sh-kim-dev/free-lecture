@@ -1,5 +1,18 @@
 let isFlipped = false;
 
+
+function writeTodayDate() {
+    const todayElement = document.querySelector('.photo-date');
+    
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0'); 
+    const day = today.getDate().toString().padStart(2, '0');
+    const formatDate = `💌${year}년 ${month}월 ${day}일💌`;
+
+    todayElement.innerHTML = formatDate;
+}
+
 function flipImage() {
     const letter = document.getElementById('letter');
     
@@ -25,4 +38,6 @@ function flipImage() {
             letter.classList.add('rotate-0');
         }
     }, { once: true }); // 한 번만 실행되도록 설정
+
+    writeTodayDate();
 }
