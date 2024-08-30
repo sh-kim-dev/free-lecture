@@ -82,17 +82,17 @@ function typeMessage(callback) {
 function renewMessage() {
     if (isAnimating) return; // 애니메이션 중이면 함수를 종료합니다.
 
-    const letterElement = document.getElementById('letter');
+    const postcardElement = document.getElementById('postcard');
     const nameElement = document.querySelector('.p-name');
 
-    toggleVisibility(letterElement, false);
+    toggleVisibility(postcardElement, false);
     toggleVisibility(nameElement, false);
 
     setTimeout(() => {
         typeMessage(() => {
             toggleVisibility(nameElement, true);
         });
-        toggleVisibility(letterElement, true);
+        toggleVisibility(postcardElement, true);
     }, 500);
 }
 

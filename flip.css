@@ -1,4 +1,4 @@
-#letter {
+#postcard {
     transform-style: preserve-3d; /* 3D 효과를 위한 설정 */
     transition: transform 0.3s;
     cursor: pointer;
@@ -17,6 +17,7 @@
     transform: rotateY(180deg); /* 초기에는 뒷면을 숨김 처리 */
 }
 
+/* 엽서 회전 애니메이션 */
 .rotate-360 {
     overflow: hidden;
     transform: rotateY(360deg); /* 두 번 회전 */
@@ -31,6 +32,7 @@
     transform: rotateY(0deg); /* 앞면이 보이도록 설정 */
 }
 
+/* 엽서 뒷면 이미지 스타일 */
 .photo-container {
     position: relative;
     width: 100%;
