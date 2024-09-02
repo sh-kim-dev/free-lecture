@@ -17,22 +17,22 @@
     transform: rotateY(180deg); /* 초기에는 뒷면을 숨김 처리 */
 }
 
-/* 엽서 회전 애니메이션 */
+/* 연하장 회전 애니메이션 */
 .rotate-360 {
     overflow: hidden;
-    transform: rotateY(360deg); /* 두 번 회전 */
+    transform: rotateY(360deg); /* 한 바퀴 회전 */
 }
 
 .rotate-180 {
-    transform: rotateY(180deg); /* 뒷면이 보이도록 설정 */
+    transform: rotateY(180deg); /* 반 바퀴 회전 */
 }
 
 .rotate-0 {
     overflow: hidden;
-    transform: rotateY(0deg); /* 앞면이 보이도록 설정 */
+    transform: rotateY(0deg); /* 회전하지 않음 */
 }
 
-/* 엽서 뒷면 이미지 스타일 */
+/* 연하장 뒷면 이미지 스타일 */
 .photo-container {
     position: relative;
     width: 100%;

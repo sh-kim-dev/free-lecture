@@ -38,16 +38,6 @@ function getRandomMessage() {
     return messages[randomIndex];
 }
 
-function showMessage(callback) {
-    const randomMessage = getRandomMessage();
-    const messageElement = document.querySelector('.p-message');
-    messageElement.innerHTML = randomMessage;
-
-    if(callback) {
-        callback();
-    }
-}
-
 function toggleVisibility(element, show) {
     element.classList.toggle('hidden', !show);
     element.classList.toggle('opened', show);
